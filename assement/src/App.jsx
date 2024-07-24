@@ -50,9 +50,9 @@ const questions = [
 ];
 
 const Assessment = () => {
-  const [selectedAnswers, setSelectedAnswers] = useState(Array(questions.length).fill(null));///  //initial value of the selected answer is set to null for each question
-  const [totalScore, setTotalScore] = useState(0);///
-  const [resultMessage, setResultMessage] = useState('');///
+  const [selectedAnswers, setSelectedAnswers] = useState(Array(questions.length).fill(null));
+  const [totalScore, setTotalScore] = useState(0);
+  const [resultMessage, setResultMessage] = useState('');
 
   console.log(selectedAnswers,"5555");
   console.log(resultMessage,"666");
@@ -60,19 +60,17 @@ const Assessment = () => {
 
 
   
-  const handleOptionChange = (questionIndex, score) => {   //The function is responsible for updating the selected answer for a specific question and recalculating the total score.
-    const newSelectedAnswers = [...selectedAnswers];  //... is a spread operator which creates the copy of the array "selectedAnswer"  , and spread operator ensures that we dont mutate the original array, which is important for state management 
-    newSelectedAnswers[questionIndex] = score;  //we are storing the score of the option the user selected  of the respected question inside newSelectedAnswers // After Selection // If a user selects an answer for the first question, "selectedAnswers" might update to:// [selectedScore, null, null] // e.g., [10, null, null]
-    // This means the user selected the first question with a score of 10, while the other two remain unanswered.
+  const handleOptionChange = (questionIndex, score) => {  
+    const newSelectedAnswers = [...selectedAnswers]; 
     console.log(newSelectedAnswers,"newSelectedAnswersnewSelectedAnswers");
     
-    setSelectedAnswers(newSelectedAnswers); //we are telling React to update the selectedAnswers state with the new array newSelectedAnswers //calculateTotalScore is a function
+    setSelectedAnswers(newSelectedAnswers); 
     calculateTotalScore(newSelectedAnswers);
   };
   
   const calculateTotalScore = (answers) => {  
-    //total score calculation , total 150/200 3 correct correct answer
-    const score = answers.reduce((acc, answer) => acc + (answer || 0), 0);  //0 after the comma is  the initial value for the accumulator
+    
+    const score = answers.reduce((acc, answer) => acc + (answer || 0), 0);  
     setTotalScore(score);
     const totalres= getResultMessage(score)
     setResultMessage(totalres);
@@ -101,14 +99,14 @@ const Assessment = () => {
       <h1 className="bg-white p-3.5 text-blue-600 text-4xl font-medium w-full text-center">MCQ Assessment</h1>
 
       {questions.map((subquestion, index) => (
-        // console.log(subquestion,"que" , index),//subquestion is "what is the capital of france?" and index is the index of question in questions i.e., length is 5 there a re 5 questions
+       
 
 
         <div className='mt-6 text-gray-800 font-semibold max-w-5xl w-11/12 m-4 p-4 rounded-xl border-2 border-blue-700 shadow-gray-600 shadow-md' key={index}>
           
           <h3 className='text-xl font-bold text-black'>{subquestion.question}</h3>
           {subquestion.options.map((option, idx) => (
-            // console.log(subquestion.question,"ss"),
+            
 
             <div key={idx}>
               <label className='mt-px inline-block ps-[0.15rem] hover:cursor-pointer'>
@@ -136,3 +134,7 @@ const Assessment = () => {
 };
 
 export default Assessment;
+
+
+
+// npx webflow devlink publish-library
