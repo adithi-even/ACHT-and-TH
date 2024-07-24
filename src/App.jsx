@@ -87,7 +87,7 @@ const Assessment = () => {
     } else if (score > 200 && score <= 300) {
       return 'Excellent';
     } else {
-      return '';
+      return 'Please select the Answers and TRy Again';
     }
   };
 
