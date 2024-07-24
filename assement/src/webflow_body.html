@@ -1,0 +1,66 @@
+<div id="app"></div>
+
+<!-- Custom Code -->
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-core@5.8.38/browser.js"></script>
+
+<script type="text/babel">
+	function Card(props) {
+  	return (
+    	<div className="card">
+			<h1 className="card-header">{props.header}</h1>
+			<img src={props.image} alt="" className="card-image" /> 
+			<p className="card-text">My name is {props.name}</p>
+  		</div>
+    );
+  }
+	
+  class App extends React.Component {
+  	constructor() {
+    	super();
+
+			this.state = {
+      	wombats: [
+        	{
+          	header: "My Special Wombat",
+            img: "https://uploads-ssl.webflow.com/5e6fdc47453238907d2f5ad4/603238e8f6ec722f98aa56e8_R82fbb33bf0441da899147761017fbf37.jpeg",
+            name: "John" 
+          },
+        	{
+          	header: "My Special Wombat 2",
+            img: "https://uploads-ssl.webflow.com/5e6fdc47453238907d2f5ad4/603238e8f6ec722f98aa56e8_R82fbb33bf0441da899147761017fbf37.jpeg",
+            name: "Terry" 
+          },
+        	{
+          	header: "My Special Wombat 2",
+            img: "https://uploads-ssl.webflow.com/5e6fdc47453238907d2f5ad4/603238e8f6ec722f98aa56e8_R82fbb33bf0441da899147761017fbf37.jpeg",
+            name: "Obstacle" 
+          }
+        ]
+      }
+    }
+
+  	render() {
+    	return (
+      	<div class="cards">
+        	{this.state.wombats.map((wombat) => {
+          	return (
+            	<Card
+      			  	header={wombat.header}
+			          image={wombat.img}
+      			    name={wombat.name}
+			        />
+            );
+          })}
+        </div>
+      )
+    }
+  }
+
+	ReactDOM.render(
+  	<App />,
+    document.getElementById('app')
+  )
+
+</script>
