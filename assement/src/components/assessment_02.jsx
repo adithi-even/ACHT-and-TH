@@ -17,7 +17,15 @@ const main_questions = [
 
 
 
-function Assessment_02() {
+export default function Assessment_02() {
+
+  const [selectedValue, setSelectedValue] = useState(" ");
+
+  const handleChange =(e) => {
+    setSelectedValue(e.target.value);
+  }
+
+
 
   return (
     <>     
@@ -27,28 +35,35 @@ function Assessment_02() {
       <h3 className='text-xl font-bold text-black'>1. I have nothing to show for myself.</h3>
       <div>
         <Radio
-          // checked={selectedValue === 'a'}
-          // onChange={handleChange}
+        className='bg-red-500'
+          checked={selectedValue === 'agree'}
+          onChange={handleChange}
           value="agree"
           name="radio-buttons"
-          inputProps={{ 'aria-label': 'A' }}
+          inputProps={{ 'aria-label': 'Agree' }}
+          {...controlProps('c')}
+          sx={{
+            '& .MuiSvgIcon-root': {
+              fontSize: 90,
+            },
+          }}
         />
         <Radio
-          // checked={selectedValue === 'b'}
-          // onChange={handleChange}
+          checked={selectedValue === 'neutral'}
+          onChange={handleChange}
           value="neutral"
           name="radio-buttons"
-          inputProps={{ 'aria-label': 'B' }}
+          inputProps={{ 'aria-label': 'Neutral' }}
         />
         <Radio
-          // checked={selectedValue === 'b'}
-          // onChange={handleChange}
+          checked={selectedValue === 'disagree'}
+          onChange={handleChange}
           value="disagree"
           name="radio-buttons"
-          inputProps={{ 'aria-label': 'B' }}
+          inputProps={{ 'aria-label': 'Disagree' }}
         />
     </div>
-      
+       
 
       </div>
 
@@ -57,5 +72,8 @@ function Assessment_02() {
   )
 }
 
-export default Assessment_02;
 
+
+<Radio
+  
+/>
