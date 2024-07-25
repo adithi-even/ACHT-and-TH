@@ -1,17 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import assessment_01 from "";
-import Home from "./pages/Home";
+import Assessment_01 from "../src/components/Assessment_01";
+import Assessment_02 from "../src/components/Assessment_02";
 
 export default function App() {
+  console.log("assess");
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>  //have to create layout file
-          <Route path="assessment_02" element={<assessment_02/>} />
-          <Route path="assessment_01" element={<assessment_01 />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
+          <Route path="/ass01" element={<Assessment_01/>} />
+          <Route path="/ass02" element={<Assessment_02/>} />
       </Routes>
     </BrowserRouter>
   );
 }
+

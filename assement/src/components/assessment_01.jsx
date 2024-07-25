@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './index.css';
+// import './index.css';
 
 const questions = [
   {
@@ -49,7 +49,7 @@ const questions = [
   }
 ];
 
-const assessment_01 = () => {
+const Assessment_01 = () => {
   const [selectedAnswers, setSelectedAnswers] = useState(Array(questions.length).fill(null));
   const [totalScore, setTotalScore] = useState(0);
   const [resultMessage, setResultMessage] = useState('');
@@ -136,7 +136,7 @@ const assessment_01 = () => {
   );
 };
 
-export default assessment_01;
+export default Assessment_01;
 
 
 
