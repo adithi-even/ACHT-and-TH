@@ -100,20 +100,22 @@ const Assessment_01 = () => {
   };
   
   return (
-    <div className='bg-gray-200 flex flex-col items-center'>
-      <h1 className="bg-white p-3.5 text-blue-600 text-4xl font-medium w-full text-center">MCQ Assessment</h1>
+    <div style={{backgroundColor:"#edf2f7",display:'flex',flexDirection:'column',alignItems:'center'}} >
+      <h1 style={{backgroundColor: '#b6b6b6', padding: '0.875rem', color: '#001dd8', fontSize: '2.25rem',fontWeight: 500,width: '100%',textAlign: 'center'}}>MCQ Assessments</h1>
+
+      
 
       {questions.map((subquestion, index) => (
-        <div className='mt-6 text-gray-800 font-semibold max-w-5xl w-11/12 m-4 p-4 rounded-xl border-2 border-blue-700 shadow-gray-600 shadow-md' key={index}>
+        <div style={{marginTop: '1.5rem', color: '#4a5568', fontWeight: 600,maxWidth: '80rem',  width: '91.6667%',  margin: '1rem', padding: '1rem', borderRadius: '0.75rem', border: '2px solid #3b82f6', boxShadow: '0 4px 6px rgba(75, 85, 99, 0.1)',}} key={index}>
           
-          <h3 className='text-xl font-bold text-black'>{subquestion.question}</h3>
+          <h3 style={{fontSize: '1.25rem', fontWeight: 700, color: '#000000' }}>{subquestion.question}</h3>
           {subquestion.options.map((option, idx) => (
             
 
             <div key={idx}>
-              <label className='mt-px inline-block ps-[0.15rem] hover:cursor-pointer'>
+              <label style={{ marginTop: '1px',display: 'inline-block', paddingInlineStart: '0.15rem', cursor: 'pointer'}}>
                 <input
-                  className='mr-2'
+                  style={{ marginRight: '0.5rem' }}
                   type="radio"
                   name={`subquestion${index}`}
                   // onChange={(e) => setName(e.target.value)}
@@ -129,9 +131,9 @@ const Assessment_01 = () => {
       ))}
 
 
-      <h2 className="bg-white p-3.5 text-blue-600 text-4xl font-medium w-full text-center">Total Score: {totalScore}</h2>
-      <h3 className="text-xl font-bold text-black mb-4">{resultMessage}</h3>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>Submit</button> 
+      <h2 style={{backgroundColor: 'white', padding: '0.875rem', color: '#1d4ed8', fontSize: '2.25rem', fontWeight: 500, width: '100%',textAlign: 'center'}}>Total Score: {totalScore}</h2>
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'black', marginBottom: '1rem' }}>{resultMessage}</h3>
+      <button style={{ backgroundColor: '#3b82f6', color: 'white', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '0.25rem', border: 'none', cursor: 'pointer'}} onClick={handleSubmit}>Submit</button> 
     </div>
   );
 };
@@ -141,5 +143,3 @@ export default Assessment_01;
 
 
 // npx webflow devlink publish-library
-
-

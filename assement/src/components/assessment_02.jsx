@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import Radio from '@mui/material/Radio';
+import styles from "./index.css"
+
 // import { FormControlLabel } from '@mui/material/Radio';
 
 // import './App.css'
@@ -76,35 +78,35 @@ export default function Assessment_02() {
 
 
 
-import * as React from 'react';
-import Radio from '@mui/material/Radio';
+// import  as React from 'react';
+// import Radio from '@mui/material/Radio';
 
-export default function SizeRadioButtons() {
-  const [selectedValue, setSelectedValue] = React.useState('a');
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
+// export default function SizeRadioButtons() {
+//   const [selectedValue, setSelectedValue] = React.useState('a');
+//   const handleChange = (event) => {
+//     setSelectedValue(event.target.value);
+//   };
 
-  const controlProps = (item) => ({
-    checked: selectedValue === item,
-    onChange: handleChange,
-    value: item,
-    name: 'size-radio-button-demo',
-    inputProps: { 'aria-label': item },
-  });
+//   const controlProps = (item) => ({
+//     checked: selectedValue === item,
+//     onChange: handleChange,
+//     value: item,
+//     name: 'size-radio-button-demo',
+//     inputProps: { 'aria-label': item },
+//   });
 
-  return (
-    <div>
-      <Radio {...controlProps('a')} size="small" />
-      <Radio {...controlProps('b')} />
-      <Radio
-        {...controlProps('c')}
-        sx={{
-          '& .MuiSvgIcon-root': {
-            fontSize: 28,
-          },
-        }}
-      />
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <Radio {...controlProps('a')} size="small" />
+//       <Radio {...controlProps('b')} />
+//       <Radio
+//         {...controlProps('c')}
+//         sx={{
+//           '& .MuiSvgIcon-root': {
+//             fontSize: 28,
+//           },
+//         }}
+//       />
+//     </div>
+//   );
+// }
